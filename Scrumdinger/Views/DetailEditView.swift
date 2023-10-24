@@ -24,6 +24,7 @@ struct DetailEditView: View {
                     Text("\(scrum.lengthInMinutes) minutes")
                         .accessibilityHidden(true)
                 }
+                ThemePickerView(selection: $scrum.theme)
             } header: {
                 Text("Meeting Info")
             }
