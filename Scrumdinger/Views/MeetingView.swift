@@ -5,12 +5,15 @@
 //  Created by Ram Jondhale on 24/10/23.
 //
 
+import AVFoundation
 import SwiftUI
 
 struct MeetingView: View {
 
     @Binding var scrum: DailyScrum
     @StateObject var scrumTimer = ScrumTimer()
+
+    private var player: AVPlayer { AVPlayer.sharedDingPlayer }
 
     var body: some View {
         ZStack {
@@ -32,6 +35,10 @@ struct MeetingView: View {
         .foregroundStyle(scrum.theme.accentColor)
         .onAppear {
             scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
+            scrumTimer.speakerChangedAction = {
+                player.seek(to: .zero)
+                player.play()
+            }
             scrumTimer.startScrum()
         }
         .onDisappear {
