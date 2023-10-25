@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct DetailView: View {
-    @Binding var scrum: DailyScrum
 
+    @Binding var scrum: DailyScrum
     @State private var editingScrum = DailyScrum.emptyScrum
     @State private var isPresentingEditView = false
 
     var body: some View {
         List {
             Section {
-                NavigationLink(destination: MeetingView()) {
+                NavigationLink(destination: MeetingView(scrum: $scrum)) {
                     Label("Start Meeting", systemImage: "timer")
                         .font(.headline)
                     .foregroundStyle(Color.accentColor)
