@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 class ScrumStore: ObservableObject {
 
     @Published var scrums: [DailyScrum] = []
