@@ -18,5 +18,4 @@ Scrumdinger is an iOS app that helps teams manage their daily scrums. To help ke
 
 ## Demo
 
-
-
+![Scrumdinger Demo](https://github.com/ramjondhale/Scrumdinger/assets/31801085/4c40436d-6d1e-4398-b356-8a38699a35df)
